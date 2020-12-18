@@ -5,4 +5,6 @@ If the countdown timer is green that means you are running on extra time you sav
 If the countdown timer is black that means you are within the time alloted for the questions.
 If the countdown timer is red that means you are borrowing time from another question.
 
-![GitHub Logo](/examtimer.png)
+![](/examtimer.png)
+![](/extratime.png)
+![](/borrow.png)
