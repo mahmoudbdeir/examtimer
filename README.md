@@ -4,3 +4,5 @@ Simple idea: dives the minutes alloted for the exam by the number of questions (
 If the countdown timer is green that means you are running on extra time you saved up from other questions.
 If the countdown timer is black that means you are within the time alloted for the questions.
 If the countdown timer is red that means you are borrowing time from another question.
+
+![GitHub Logo](/examtimer.png)
