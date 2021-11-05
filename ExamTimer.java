@@ -93,7 +93,7 @@ public class ExamTimer extends JFrame {
 		examTime.setBounds(275, 27, 100, 36);
 		getContentPane().add(examTime);
 
-		JButton doneButton = new JButton("Done with question");
+		JButton doneButton = new JButton("Next question");
 		doneButton.setEnabled(false);
 		doneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
