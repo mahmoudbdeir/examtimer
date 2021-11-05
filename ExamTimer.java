@@ -44,11 +44,11 @@ public class ExamTimer extends JFrame {
 	int numberOfQuestions;
 	int fixedSecondsPerQuestion;
 	int secondsPerQuestion;
-	int questionsAnswered;
+	int questionsAnswered = 1;
 
 	public ExamTimer() {
 		Timer timer = new Timer("Timer");
-		JLabel questionsAnsweredLabel = new JLabel("0");
+		JLabel questionsAnsweredLabel = new JLabel("q"+ questionsAnswered);
 		setType(Type.UTILITY);
 		setTitle("MHB Exam Timer");
 		setResizable(false);
