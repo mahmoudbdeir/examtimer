@@ -13,6 +13,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
+import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -116,10 +117,15 @@ public class ExamTimer extends JFrame {
 		JButton startButton = new JButton("Start");
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				timeSpinner.setEnabled(false);
-				questionsSpinner.setEnabled(false);
 				examMinutes = Integer.parseInt(timeSpinner.getValue().toString());
 				numberOfQuestions = Integer.parseInt(questionsSpinner.getValue().toString());
+				if(examMinutes <= 0 || numberOfQuestions <= 0){
+					JFrame f =new JFrame();  
+					JOptionPane.showMessageDialog(f, "Invalid Input. Please try again.");
+					return;
+				}
+				timeSpinner.setEnabled(false);
+				questionsSpinner.setEnabled(false);
 				fixedSecondsPerQuestion = (int) Math.round(60.0 * examMinutes / numberOfQuestions);
 				secondsPerQuestion = fixedSecondsPerQuestion;
 				examTime.setText("" + examMinutes);
