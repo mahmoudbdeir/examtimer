@@ -55,7 +55,7 @@ public class ExamTimer extends JFrame {
 		setBounds(100, 100, 455, 223);
 		getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Number of questions:");
+		JLabel lblNewLabel = new JLabel("How many questions?");
 		lblNewLabel.setBounds(10, 11, 128, 14);
 		getContentPane().add(lblNewLabel);
 
