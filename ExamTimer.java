@@ -112,7 +112,7 @@ public class ExamTimer extends JFrame {
 				questionsSpinner.setEnabled(false);
 				examMinutes = Integer.parseInt(timeSpinner.getValue().toString());
 				numberOfQuestions = Integer.parseInt(questionsSpinner.getValue().toString());
-				fixedSecondsPerQuestion = (int) Math.round(60.0 * numberOfQuestions / examMinutes);
+				fixedSecondsPerQuestion = (int) Math.round(60.0 * examMinutes / numberOfQuestions);
 				secondsPerQuestion = fixedSecondsPerQuestion;
 				examTime.setText("" + examMinutes);
 				questionTime.setText("" + secondsPerQuestion);
