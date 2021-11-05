@@ -46,6 +46,7 @@ public class ExamTimer extends JFrame {
 	int questionsAnswered;
 
 	public ExamTimer() {
+		Timer timer = new Timer("Timer");
 		JLabel questionsAnsweredLabel = new JLabel("0");
 		setType(Type.UTILITY);
 		setTitle("MHB Exam Timer");
@@ -97,8 +98,15 @@ public class ExamTimer extends JFrame {
 		doneButton.setEnabled(false);
 		doneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				questionsAnsweredLabel.setText("q" + ++questionsAnswered);
-				secondsPerQuestion += fixedSecondsPerQuestion;
+				if(questionsAnswered < numberOfQuestions){
+					questionsAnsweredLabel.setText("q" + ++questionsAnswered);
+					secondsPerQuestion += fixedSecondsPerQuestion;
+				} else {
+					questionsAnsweredLabel.setText("Finished!");
+					doneButton.setEnabled(false);
+					timer.cancel();
+					timer.purge();
+				}
 			}
 		});
 		doneButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -135,11 +143,11 @@ public class ExamTimer extends JFrame {
 						examTime.setText("" + examMinutes);
 					}
 				};
-				Timer timer = new Timer("Timer");
 
 				long delay = 1000L;
 				long period = 1000L;
 				timer.scheduleAtFixedRate(repeatedTask, delay, period);
+	
 			}
 		});
 
